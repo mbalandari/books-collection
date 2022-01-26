@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import BooksContainer from "./components/BooksContainer";
+import DetailPanel from "./components/DetailPanel";
 import Header from "./components/Header";
 import { GlobalStyle } from "./styles";
 
@@ -22,13 +23,12 @@ const App = () => {
     setSelectedBook(book)
   }
 
-  console.log(selectedBook);
-
   return (
     <>
       <GlobalStyle />
       <Header />
       <BooksContainer books={books} pickBook={pickBook} />
+      {selectedBook && <DetailPanel book={selectedBook} />}
     </>
   );
 }
