@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import BooksContainer from "./components/BooksContainer";
+import Header from "./components/Header";
+import { GlobalStyle } from "./styles";
 
 
 const App = () => {
@@ -17,6 +19,8 @@ const App = () => {
 
   return (
     <>
+      <GlobalStyle />
+      <Header />
       <BooksContainer books={books} />
     </>
   );
