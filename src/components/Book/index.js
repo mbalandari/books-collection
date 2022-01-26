@@ -1,8 +1,8 @@
 import { Author, Container, Cover, Title } from "./styles";
 
 
-const Book = ({ book }) => (
-    <Container>
+const Book = ({ book, pickBook }) => (
+    <Container onClick={() => pickBook(book)}>
         <Cover src={book.image} alt={`Book cover for ${book.title} by ${book.author}`} />
         <figcaption>
             <Title>{book.title}</Title>
