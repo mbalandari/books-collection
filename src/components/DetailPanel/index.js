@@ -1,20 +1,21 @@
 import Book from "../Book";
-import { Em, P, Panel } from "./styles";
+import { BG, Close, CloseWrapper, Em, P, Panel } from "./styles";
 
 
-const DetailPanel = ({ book }) => (
-    <Panel>
-        <Book book={book} isLarge={true} />
-        {/* <figure>
-            <img src={book.image} alt={book.title} />
-            <h3>{book.title}</h3>
-            <h4>by {book.author}</h4>
-        </figure> */}
-        <P>{book.description}</P>
-        <P>
-            <Em>Published in {book.published}</Em>
-        </P>
-    </Panel>
+const DetailPanel = ({ book, closePanel }) => (
+    <>
+        <BG onClick={closePanel} />
+        <Panel>
+            <CloseWrapper onClick={closePanel}>
+                <Close />
+            </CloseWrapper>
+            <Book book={book} isLarge={true} />
+            <P>{book.description}</P>
+            <P>
+                <Em>Published in {book.published}</Em>
+            </P>
+        </Panel>
+    </>
 )
 
 export default DetailPanel;

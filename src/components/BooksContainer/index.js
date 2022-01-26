@@ -2,8 +2,8 @@ import { BookList, Container, H2 } from "./styles";
 import Book from '../Book';
 
 
-const BooksContainer = ({ books, pickBook }) => (
-    <Container>
+const BooksContainer = ({ books, pickBook, isPanelOpen }) => (
+    <Container $isPanelOpen={isPanelOpen}>
         <H2>All Books</H2>
         <BookList>
             {books.map((book) => (
