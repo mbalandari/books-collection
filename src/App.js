@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import BooksContainer from "./components/BooksContainer";
 
 
 const App = () => {
@@ -6,27 +7,18 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await fetch("https://book-club-json.herokuapp.com/books")
-        console.log(`returns fetch req: `, response)
-        const books = await response.json()
-        console.log(`json response: `, books)
-        setBooks(books)
-      } catch (errors) {
-        console.log(errors)
-      }
+      const response = await fetch("https://book-club-json.herokuapp.com/books")
+      const books = await response.json()
+      setBooks(books)
     }
-
 
     fetchData()
   }, [])
 
-  console.log(`the books: `, books)
-
   return (
-    <div>
-      Hey!
-    </div>
+    <>
+      <BooksContainer books={books} />
+    </>
   );
 }
 
