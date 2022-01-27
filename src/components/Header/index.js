@@ -1,11 +1,12 @@
 import { HeaderContainer, Logo } from "./styles";
 
 
-const Header = () => (
+const Header = ({ children }) => (
     <HeaderContainer>
         <a href="/">
             <Logo title="Books Collection logo" />
         </a>
+        {children}
     </HeaderContainer>
 )
 
